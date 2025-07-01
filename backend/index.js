@@ -14,4 +14,7 @@ mongoose.connect(process.env.MONGO_URI).then(() => console.log("MongoDB connecte
 app.listen(5000, () => console.log("Server started on port 5000"));
 
 const productRoutes = require("./routes/product");
+app.get("/", async (req, res) => {
+  res.send("Api is working");
+});
 app.use("/api/products", productRoutes);
